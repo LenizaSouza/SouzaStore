@@ -3,17 +3,26 @@ package modelo;
 import utils.Utils;
 
 public class Mercadoria {
+	
+
 	private static int count = 1;
 	
 	private int id;
 	private String nome;
 	private Double preco;
 	
-	public Mercadoria(String nome, Double preco) {
+	
+	
+	public Mercadoria (String nome, Double preco) {
 		this.id = count;
 		this.nome = nome;
 		this.preco = preco;
-		Mercadoria.count +=1;		
+		Mercadoria.count += 1;		
+	}
+
+	public Mercadoria() {
+		this.id = count;
+		Mercadoria.count += 1;
 	}
 
 	public int getId() {
@@ -36,10 +45,11 @@ public class Mercadoria {
 		this.preco = preco;
 	}
 	
-	public String oString() {
+	public String toString() {
 		return "Id: " + this.getId() +
 				"\nNome: " + this.getNome() +
 				"\nPreço: " + Utils.doubleToString(this.getPreco());
+		
 	}
 
 }
